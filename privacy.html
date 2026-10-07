@@ -18,13 +18,18 @@
 </style>
 <main>
 <h1>Privacy Policy for CardVault</h1>
-<p class="sub">Last updated: 30 September 2026 · Published by Stratus Flight and Field LLC</p>
+<p class="sub">Last updated: 6 October 2026 · Published by Stratus Flight and Field LLC</p>
 
 <h2>The short version</h2>
-<p>CardVault does not collect your data, because it cannot. The app makes no
-network requests of any kind. There is no account to create, no server to sign
-in to, and no analytics. Everything you put into CardVault stays in the app's
-private storage on your device.</p>
+<p>Everything you put into CardVault stays in the app's private storage on your
+device. The app itself makes no network requests, there is no account to create
+and no server to sign in to, and the developer never receives your cards or
+anything else from the app.</p>
+<p>There is one exception worth stating plainly. The Google ML Kit component
+that reads text from a scanned card reports diagnostic and usage data about its
+own operation to Google. It never sends your cards, your images, or the text
+read from them. It is described in full under
+<a href="#mlkit">Text recognition and Google ML Kit</a>.</p>
 
 <h2>What CardVault stores, and where</h2>
 <p>Business cards you scan, tap, import or type — names, job titles, companies,
@@ -38,13 +43,37 @@ controlled by you in your device settings, and the developer has no access
 to it.</p>
 
 <h2>What leaves your device</h2>
-<p>Nothing, unless you choose to send it.</p>
+<p>None of your cards or their contents, unless you choose to send them.</p>
 <ul>
-<li><strong>Text recognition</strong> of a scanned card runs entirely on your device. No image and no text is uploaded.</li>
+<li><strong>Text recognition</strong> of a scanned card runs entirely on your device. No image and no text is uploaded. The ML Kit SDK that performs it does send Google diagnostic data about itself — see <a href="#mlkit">below</a>.</li>
 <li><strong>NFC reads</strong> happen on your device.</li>
 <li><strong>Sharing a card</strong> sends a standard .vcf file only to wherever you send it, using the iOS share sheet. CardVault is not a party to it.</li>
 <li><strong>Backups</strong> are files you create and keep. They are not sent anywhere.</li>
 </ul>
+
+<h2 id="mlkit">Text recognition and Google ML Kit</h2>
+<p>CardVault reads the text on a scanned card using Google's ML Kit.
+<strong>The recognition runs on your device.</strong> The card image, and the
+text recovered from it, are never sent to Google, to the developer, or to any
+other server.</p>
+<p>Separately from the recognition itself, the ML Kit SDK reports on its own
+operation to Google. Per Google's disclosure this may include:</p>
+<ul>
+<li>device information — manufacturer, model, operating system version and build</li>
+<li>the app's bundle identifier and version</li>
+<li>a per-installation identifier, which Google states is not intended to uniquely identify a user</li>
+<li>performance metrics such as processing latency</li>
+<li>configuration details such as image format and resolution</li>
+<li>event types such as feature initialisation and detection events</li>
+<li>error codes arising from the feature's operation</li>
+</ul>
+<p>This is information about the software and the device, not about you.
+<strong>No card image, recognised text, contact detail or note is included.</strong>
+It goes to Google, not to the developer, who receives none of it. Google
+describes it on its
+<a href="https://developers.google.com/ml-kit/ios-data-disclosure">ML Kit iOS data disclosure page</a>,
+and its handling is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
+This reporting is part of the SDK; the app offers no setting to turn it off.</p>
 
 <h2>Permissions CardVault asks for</h2>
 <ul>
@@ -60,12 +89,17 @@ your payment information. CardVault records only whether the unlock has been
 purchased, stored on your device.</p>
 
 <h2>Third parties</h2>
-<p>CardVault contains no advertising, no analytics and no tracking of any kind.
-No data is sold, shared, or disclosed to anyone, because none is collected.</p>
+<p>CardVault contains no advertising and no tracking, and the developer operates
+no analytics and receives no usage data about you. Nothing is sold. Two third
+parties are involved: Apple, which processes the purchase and distributes the
+app, and Google, whose ML Kit provides on-device text recognition and collects
+the diagnostic data described above.</p>
 
 <h2>Children</h2>
 <p>CardVault is a business utility and is not directed to children under 13. It
-collects no personal information from anyone, including children.</p>
+collects no personal information from anyone, including children. The ML Kit
+diagnostic data described above is collected by Google's SDK and concerns the
+device and the software rather than the person using it.</p>
 
 <h2>Deleting your data</h2>
 <p>Deleting the app deletes its database and images. There is no server-side copy
